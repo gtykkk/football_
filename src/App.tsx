@@ -1,25 +1,21 @@
 import { Routes, Route } from 'react-router-dom'
-import './globals.css'
-import { Home } from './_root/pages'
-import SigninForm from './_auth/forms/SigninForm'
-import SignupForm from './_auth/forms/SignupForm'
-import AuthLayout from './_auth/AuthLayout'
+import { Home, About, Rank } from './_root/pages'
 import RootLayout from './_root/RootLayout'
+import './globals.css'
 
 const App = () => {
-  return (
-    <main className='flex h-screen'>
-      <Routes>
-        <Route element={<AuthLayout />} >
-          <Route path='/sign-in' element={<SigninForm />} />
-          <Route path='/sign-up' element={<SignupForm />} />
-        </Route>
-        <Route element={<RootLayout />} >
-          <Route index element={<Home />} />
-        </Route>
-      </Routes>
-    </main>
-  )
+    return (
+        <main>
+            <Routes>
+                {/* 로그인 하지 않아도 볼 수 있는 화면 */}
+                <Route element={<RootLayout />}>
+                    <Route index element={<Home />} />
+                    <Route path="about" element={<About />} />
+                    <Route path="rank" element={<Rank />} />
+                </Route>
+            </Routes>
+        </main>
+    )
 }
 
 export default App
