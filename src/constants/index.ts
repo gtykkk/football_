@@ -1,16 +1,16 @@
 export const sidebarLinks = [
     {
-        imgUrl: "",
+        imgUrl: "/assets/icons/home.svg",
         route: "/",
         label: "홈"
     },
     {
-        imgUrl: "",
-        route: "/about",
+        imgUrl: "/assets/icons/calender.svg",
+        route: "/calender",
         label: "일정"
     },
     {
-        imgUrl: "",
+        imgUrl: "/assets/icons/rank.svg",
         route: "/rank",
         label: "순위"
     }

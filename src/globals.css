@@ -4,27 +4,31 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 기본 화면 배경 설정 */
 @layer base {
     * {
-        @apply box-border list-none p-0 m-0 scroll-smooth;
+        @apply bg-teal-700 box-border list-none p-0 m-0 scroll-smooth;
     }
 
     body {
-        @apply text-white min-h-screen font-inter;
+        @apply min-h-screen font-inter;
     }
 }
 
-/* Topbar */
-.topbar {
-    @apply sticky top-0 z-50 md:hidden bg-dark-2 w-full;
+@layer components {
+    
 }
 
-/* LeftSidebar */
-.leftsidebar {
-    @apply hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px] bg-dark-2;
-}
+@layer utilities {
+    .shad-button_ghost {
+        @apply flex gap-4 items-center justify-start hover:bg-transparent hover:text-white !important;
+    }
 
-/* .leftsidebar-link {
-    @apply rounded-lg base-medium hover:bg-primary-500 transition;
-} */
+
+    .leftsidebar {
+        @apply px-6 py-10 text-white max-w-[200px];
+    }
+
+    /* .leftsidebar-link {
+        @apply rounded-lg base-medium hover:bg-primary-500 transition;
+    } */
+}

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 
+// 반응형 사이즈가 큰 화면에서는 상단 바가 없음
 const Topbar = () => {
     return (
         <section className='topbar'>
