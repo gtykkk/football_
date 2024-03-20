@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import { Home, Calender, Rank } from './_root/pages'
 import RootLayout from './_root/RootLayout'
 import './globals.css'
+import Communication from './_root/pages/Communication'
 
 const App = () => {
     return (
@@ -12,6 +13,7 @@ const App = () => {
                     <Route index element={<Home />} />
                     <Route path="calender" element={<Calender />} />
                     <Route path="rank" element={<Rank />} />
+                    <Route path="communication" element={<Communication />} />
                 </Route>
             </Routes>
         </main>

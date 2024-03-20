@@ -13,7 +13,7 @@ const LeftSidebar = () => {
     const { pathname } = useLocation()
 
     return (
-        <nav className="leftsidebar">
+        <nav className="hidden md:flex px-6 py-10 flex-col justify-between min-w-[270px]">
             <div className="flex flex-col">
                 <Link to="/" className="flex gap-3 items-center">
                     <img src="/assets/images/ball.svg" alt="logo" width={100} height={100} />
@@ -24,32 +24,24 @@ const LeftSidebar = () => {
                 <br></br>
                 <br></br>
                 {/* 프로필 들어갈 자리 */}
-                <ul className="flex flex-col gap-6">
-                    <span className="text-gray-600">MAIN APP</span>
+                <ul className="flex flex-col gap-7">
+                    {/* <span className="text-gray-600">MAIN APP</span> */}
                     {sidebarLinks.map((link: INavLink) => (
-                        <li key={link.route} className="">
-                            <Link to={link.route} className={`flex gap-3 items-center ${pathname === link.route ? 'active' : ''}`}>
+                        <li key={link.route} className="rounded-lg base-medium transition">
+                            <Link to={link.route} className={`flex gap-4 items-center ${pathname === link.route ? 'active' : ''}`}>
                                 <img src={link.imgUrl} alt={link.label} width={30} height={30} />
                                 <span>{link.label}</span>
                             </Link>
                         </li>
                     ))}
-                    <span className="text-gray-600">OTHERS</span>
-                    <li>
-                        <Link to="/communication" className="flex gap-3 items-center">
-                            <img src="/assets/icons/communication.svg" alt="게시판" width={30} height={30} />
-                            <span>게시판</span>
-                        </Link>
-                    </li>
-                    <Button variant="ghost" className="shad-button_ghost">
-                        <Link to="/logout" className="flex gap-3 items-center">
-                            <img src="/assets/icons/logout.svg" alt="로그아웃" width={30} height={30} />
-                            <span>로그아웃</span>
-                        </Link>
-                    </Button>
+                    {/* <span className="text-gray-600">OTHERS</span> */}
                 </ul>
             </div>
-        </nav>
+            <Button variant="ghost" className="shad-button_ghost">
+                <img src="/assets/icons/logout.svg" alt="로그아웃" width={30} height={30} />
+                <p className="small-medium lg:base-medium">로그아웃</p>
+            </Button>
+        </nav >
     )
 }
 
